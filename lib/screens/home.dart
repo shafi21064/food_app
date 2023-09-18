@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/Components/menu_box.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -61,10 +62,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Container(
+            const SizedBox(
                 height: 66,
                 width: 183,
-                child: const Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -83,7 +84,35 @@ class HomeScreen extends StatelessWidget {
                       ),
                     )
                   ],
-                ))
+                )),
+            const SizedBox(height: 26,),
+            SizedBox(
+              height: 105,
+              width: MediaQuery.sizeOf(context).width,
+              //color: Colors.amber,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  MenuBox(
+                    menuIcon: 'lib/assets/images/love.png',
+                    menuTitle: 'Favorite',
+                  ),
+                  MenuBox(
+                    menuIcon: 'lib/assets/images/cheap.png',
+                    menuTitle: 'Cheap',
+                  ),
+                  MenuBox(
+                    menuIcon: 'lib/assets/images/trend.png',
+                    menuTitle: 'Trend',
+                  ),
+                  MenuBox(
+                    menuIcon: 'lib/assets/images/more.png',
+                    menuTitle: 'More',
+                  ),
+
+                ],
+              ),
+            )
           ],
         ),
       ),
