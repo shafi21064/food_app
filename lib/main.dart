@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/Components/bottom_navigation.dart';
 import 'package:food_app/screens/home.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xff7E7E7E),
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: BottomNavigation(),
     );
   }
 }

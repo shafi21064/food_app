@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/Components/bottom_navigation.dart';
+import 'package:food_app/Components/dish_item.dart';
 import 'package:food_app/Components/menu_box.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           color: Color(0xff7E7E7E),
         ),
         title: const Text(
-          'Food App',
+          'Dashboard',
           style: TextStyle(color: Color(0xff7E7E7E)),
         ),
         centerTitle: true,
@@ -29,8 +31,8 @@ class HomeScreen extends StatelessWidget {
               ))
         ],
       ),
-      body: Container(
-        margin: const EdgeInsets.all(16),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 16, color: Color(0xff7E7E7E)),
                     ),
                     Icon(
-                      Icons.arrow_drop_down_circle_outlined,
+                      Icons.keyboard_arrow_down,
                       color: Color(0xff7E7E7E),
                     )
                   ],
@@ -78,14 +80,13 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Text(
                       'What do you want to eat?',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xff7E7E7E)
-                      ),
+                      style: TextStyle(fontSize: 16, color: Color(0xff7E7E7E)),
                     )
                   ],
                 )),
-            const SizedBox(height: 26,),
+            const SizedBox(
+              height: 26,
+            ),
             SizedBox(
               height: 105,
               width: MediaQuery.sizeOf(context).width,
@@ -109,7 +110,40 @@ class HomeScreen extends StatelessWidget {
                     menuIcon: 'lib/assets/images/more.png',
                     menuTitle: 'More',
                   ),
-
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Today's Promo",
+                  style: TextStyle(fontSize: 23, color: Color(0xff3E4462)),
+                ),
+                TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'See all',
+                      style: TextStyle(
+                          color: const Color(0xff84C4F).withOpacity(.9)),
+                    ))
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Expanded(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  DishItem(),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  DishItem()
                 ],
               ),
             )
