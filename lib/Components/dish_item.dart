@@ -30,13 +30,13 @@ class DishItem extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 5,
-            right: 5,
+            top: 10,
+            right: 10,
             child: Container(
               alignment: Alignment.center,
               height: 40,
               width: 40,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
@@ -93,7 +93,7 @@ class DishItem extends StatelessWidget {
                     right: 0,
                     child: Container(
                       height: 30,
-                      width: 47,
+                      width: 50,
                       decoration: BoxDecoration(
                           color: const Color(0xffEDA345),
                           borderRadius: BorderRadius.circular(5)

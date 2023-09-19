@@ -155,7 +155,27 @@ class HomeScreen extends StatelessWidget {
                      dishSubTitle: 'Dist Subtitle',
                      dishPrice: '100.00',
                      dishLeft: '10',
-                   )
+                   ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  DishItem(
+                    dishImage: 'lib/assets/images/dish_one.png',
+                    dishTitle: 'Dish Title',
+                    dishSubTitle: 'Dist Subtitle',
+                    dishPrice: '100.00',
+                    dishLeft: '10',
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  DishItem(
+                    dishImage: 'lib/assets/images/dish_two.png',
+                    dishTitle: 'Dish Title',
+                    dishSubTitle: 'Dist Subtitle',
+                    dishPrice: '100.00',
+                    dishLeft: '10',
+                  )
                 ],
               ),
             )
