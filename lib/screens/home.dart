@@ -138,12 +138,24 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: const [
-                  DishItem(),
-                  SizedBox(
+                children: [
+                  DishItem(
+                    dishImage: 'lib/assets/images/dish_one.png',
+                    dishTitle: 'Dish Title',
+                    dishSubTitle: 'Dist Subtitle',
+                    dishPrice: '180.00',
+                    dishLeft: '5',
+                  ),
+                  const SizedBox(
                     width: 10,
                   ),
-                  DishItem()
+                   DishItem(
+                     dishImage: 'lib/assets/images/dish_two.png',
+                     dishTitle: 'Dish Title',
+                     dishSubTitle: 'Dist Subtitle',
+                     dishPrice: '100.00',
+                     dishLeft: '10',
+                   )
                 ],
               ),
             )

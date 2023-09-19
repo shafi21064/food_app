@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DishItem extends StatelessWidget {
-  const DishItem({super.key});
+  String dishImage, dishTitle, dishSubTitle, dishPrice, dishLeft ;
+   DishItem({super.key,
+     required this.dishImage,
+     required this.dishTitle,
+     required this.dishSubTitle,
+     required this.dishPrice,
+     required this.dishLeft
+   });
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +20,9 @@ class DishItem extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height,
             width: 325,
             decoration: BoxDecoration(
-                image: const DecorationImage(
+                image: DecorationImage(
                     image: AssetImage(
-                      'lib/assets/images/dish_one.png',
+                      dishImage,
                     ),
                     fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(10),
@@ -34,33 +41,33 @@ class DishItem extends StatelessWidget {
               ),
               child: Stack(
                 children: [
-                  const Column(
+                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Dish Name',
-                        style: TextStyle(
+                        dishTitle,
+                        style: const TextStyle(
                           color: Color(0xff3E4462),
                           fontSize: 20,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Text(
-                        'Subtitle',
-                        style: TextStyle(
+                       Text(
+                        dishSubTitle,
+                        style: const TextStyle(
                             color: Color(0xff7E7E7E),
                             fontSize: 18
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Text(
-                        '180.00',
-                        style: TextStyle(
+                       Text(
+                        dishPrice,
+                        style: const TextStyle(
                             color: Color(0xff7E7E7E),
                             fontSize: 16
                         ),
@@ -77,10 +84,10 @@ class DishItem extends StatelessWidget {
                           color: const Color(0xffEDA345),
                           borderRadius: BorderRadius.circular(5)
                       ),
-                      child: const Center(
+                      child:  Center(
                         child: Text(
-                          '5 Left',
-                          style: TextStyle(
+                          '$dishLeft Left',
+                          style: const TextStyle(
                               color: Colors.white
                           ),
                         ),
