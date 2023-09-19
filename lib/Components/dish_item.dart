@@ -29,6 +29,20 @@ class DishItem extends StatelessWidget {
                 color: Colors.red
             ),
           ),
+          Positioned(
+            top: 5,
+            right: 5,
+            child: Container(
+              alignment: Alignment.center,
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset('lib/assets/images/love.png',),
+            ),
+          ),
           Positioned (
             bottom: 15,
             child: Container(
