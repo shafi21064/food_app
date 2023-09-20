@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:food_app/Components/bottom_navigation.dart';
 import 'package:food_app/Components/dish_item.dart';
 import 'package:food_app/Components/menu_box.dart';
+import 'package:food_app/provider/item_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var itemProvider = Provider.of<ItemProvider>(context);
     return Scaffold(
       backgroundColor: const Color(0xffF8F5F2),
       appBar: AppBar(
@@ -136,48 +139,25 @@ class HomeScreen extends StatelessWidget {
               height: 15,
             ),
             Expanded(
-              child: ListView(
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  DishItem(
-                    dishImage: 'lib/assets/images/dish_one.png',
-                    dishTitle: 'Dish Title',
-                    dishSubTitle: 'Dist Subtitle',
-                    dishPrice: '180.00',
-                    dishLeft: '5',
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                   DishItem(
-                     dishImage: 'lib/assets/images/dish_two.png',
-                     dishTitle: 'Dish Title',
-                     dishSubTitle: 'Dist Subtitle',
-                     dishPrice: '100.00',
-                     dishLeft: '10',
-                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  DishItem(
-                    dishImage: 'lib/assets/images/dish_one.png',
-                    dishTitle: 'Dish Title',
-                    dishSubTitle: 'Dist Subtitle',
-                    dishPrice: '100.00',
-                    dishLeft: '10',
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  DishItem(
-                    dishImage: 'lib/assets/images/dish_two.png',
-                    dishTitle: 'Dish Title',
-                    dishSubTitle: 'Dist Subtitle',
-                    dishPrice: '100.00',
-                    dishLeft: '10',
-                  )
-                ],
-              ),
+                itemCount: itemProvider.itemList.length,
+                  itemBuilder: (context, index){
+                  return Row(
+                    children: [
+                      DishItem(
+                        dishImage: itemProvider.itemList[index]['item_pic'],
+                        dishTitle: itemProvider.itemList[index]['item_name'],
+                        dishSubTitle: itemProvider.itemList[index]['item_subname'],
+                        dishPrice: itemProvider.itemList[index]['special_price'],
+                        dishRegularPrice: itemProvider.itemList[index]['regular_price'],
+                        dishLeft: itemProvider.itemList[index]['item_left'],
+                      ),
+                      SizedBox(width: 10,)
+                    ],
+                  );
+                  }
+              )
             )
           ],
         ),
