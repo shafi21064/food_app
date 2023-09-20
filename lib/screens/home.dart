@@ -119,45 +119,87 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "Today's Promo",
-                  style: TextStyle(fontSize: 23, color: Color(0xff3E4462)),
-                ),
-                TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'See all',
-                      style: TextStyle(
-                          color: const Color(0xff84C4F).withOpacity(.9)),
-                    ))
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
             Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: itemProvider.itemList.length,
-                  itemBuilder: (context, index){
-                  return Row(
-                    children: [
-                      DishItem(
-                        dishImage: itemProvider.itemList[index]['item_pic'],
-                        dishTitle: itemProvider.itemList[index]['item_name'],
-                        dishSubTitle: itemProvider.itemList[index]['item_subname'],
-                        dishPrice: itemProvider.itemList[index]['special_price'],
-                        dishRegularPrice: itemProvider.itemList[index]['regular_price'],
-                        dishLeft: itemProvider.itemList[index]['item_left'],
+                child: ListView(
+                  children: [
+                    Container(
+                      height: MediaQuery.sizeOf(context).height,
+                      width: MediaQuery.sizeOf(context).width,
+                     // color: Colors.red,
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "Today's Promo",
+                                style: TextStyle(fontSize: 23, color: Color(0xff3E4462)),
+                              ),
+                              TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'See all',
+                                    style: TextStyle(
+                                        color: const Color(0xff84C4F).withOpacity(.9)),
+                                  ))
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            height: 270,
+                            width: MediaQuery.sizeOf(context).width,
+                            child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: itemProvider.itemList.length,
+                                itemBuilder: (context, index){
+                                  return Row(
+                                    children: [
+                                      DishItem(
+                                        dishImage: itemProvider.itemList[index]['item_pic'],
+                                        dishTitle: itemProvider.itemList[index]['item_name'],
+                                        dishSubTitle: itemProvider.itemList[index]['item_subname'],
+                                        dishPrice: itemProvider.itemList[index]['special_price'],
+                                        dishRegularPrice: itemProvider.itemList[index]['regular_price'],
+                                        dishLeft: itemProvider.itemList[index]['item_left'],
+                                      ),
+                                      SizedBox(width: 10,)
+                                    ],
+                                  );
+                                }
+                            ),
+                          ),
+                          SizedBox(height: 30,),
+
+                          Container(
+                            height: 270,
+                            width: MediaQuery.sizeOf(context).width,
+                            child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: itemProvider.itemList.length,
+                                itemBuilder: (context, index){
+                                  return Row(
+                                    children: [
+                                      DishItem(
+                                        dishImage: itemProvider.itemList[index]['item_pic'],
+                                        dishTitle: itemProvider.itemList[index]['item_name'],
+                                        dishSubTitle: itemProvider.itemList[index]['item_subname'],
+                                        dishPrice: itemProvider.itemList[index]['special_price'],
+                                        dishRegularPrice: itemProvider.itemList[index]['regular_price'],
+                                        dishLeft: itemProvider.itemList[index]['item_left'],
+                                      ),
+                                      SizedBox(width: 10,)
+                                    ],
+                                  );
+                                }
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 10,)
-                    ],
-                  );
-                  }
-              )
+                    )
+                  ],
+                )
             )
           ],
         ),
