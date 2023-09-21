@@ -5,7 +5,7 @@ class ItemProvider extends ChangeNotifier{
   dynamic itemList = [
     {
       'id' : 1,
-      'item_pic' : 'lib/assets/images/dish_one.png',
+      'item_pic' : 'assets/images/dish_one.png',
       'item_name' : 'Dish Name',
       'item_subname' : 'Dish Subtitle',
       'special_price' : '120',
@@ -14,7 +14,7 @@ class ItemProvider extends ChangeNotifier{
     },
     {
       'id' : 1,
-      'item_pic' : 'lib/assets/images/dish_two.png',
+      'item_pic' : 'assets/images/dish_two.png',
       'item_name' : 'Dish Name',
       'item_subname' : 'Dish Subtitle',
       'special_price' : '120',
@@ -23,7 +23,7 @@ class ItemProvider extends ChangeNotifier{
     },
     {
       'id' : 1,
-      'item_pic' : 'lib/assets/images/dish_one.png',
+      'item_pic' : 'assets/images/dish_one.png',
       'item_name' : 'Dish Name',
       'item_subname' : 'Dish Subtitle',
       'special_price' : '120',
@@ -32,7 +32,7 @@ class ItemProvider extends ChangeNotifier{
     },
     {
       'id' : 1,
-      'item_pic' : 'lib/assets/images/dish_two.png',
+      'item_pic' : 'assets/images/dish_two.png',
       'item_name' : 'Dish Name',
       'item_subname' : 'Dish Subtitle',
       'special_price' : '120',

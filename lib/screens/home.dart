@@ -98,19 +98,19 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   MenuBox(
-                    menuIcon: 'lib/assets/images/love.png',
+                    menuIcon: 'assets/images/love.png',
                     menuTitle: 'Favorite',
                   ),
                   MenuBox(
-                    menuIcon: 'lib/assets/images/cheap.png',
+                    menuIcon: 'assets/images/cheap.png',
                     menuTitle: 'Cheap',
                   ),
                   MenuBox(
-                    menuIcon: 'lib/assets/images/trend.png',
+                    menuIcon: 'assets/images/trend.png',
                     menuTitle: 'Trend',
                   ),
                   MenuBox(
-                    menuIcon: 'lib/assets/images/more.png',
+                    menuIcon: 'assets/images/more.png',
                     menuTitle: 'More',
                   ),
                 ],

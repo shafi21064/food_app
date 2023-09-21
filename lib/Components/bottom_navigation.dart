@@ -23,10 +23,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         items: [
-          BottomNavigationBarItem(icon: Image.asset('lib/assets/images/b_home.png'), label: '' ),
-          BottomNavigationBarItem(icon: Image.asset('lib/assets/images/b_item.png'), label: ''),
-          BottomNavigationBarItem(icon: Image.asset('lib/assets/images/b_search.png'), label: ''),
-          BottomNavigationBarItem(icon: Image.asset('lib/assets/images/b_user.png'), label: '')
+          BottomNavigationBarItem(icon: Image.asset('assets/images/b_home.png'), label: '' ),
+          BottomNavigationBarItem(icon: Image.asset('assets/images/b_item.png'), label: ''),
+          BottomNavigationBarItem(icon: Image.asset('assets/images/b_search.png'), label: ''),
+          BottomNavigationBarItem(icon: Image.asset('assets/images/b_user.png'), label: '')
         ],
         onTap: (index){
           setState(() {

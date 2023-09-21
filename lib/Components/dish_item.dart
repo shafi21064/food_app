@@ -44,7 +44,7 @@ class DishItem extends StatelessWidget {
             shape: BoxShape.circle,
           ),
           child: Image.asset(
-            'lib/assets/images/love.png',
+            'assets/images/love.png',
           ),
         ),
       ),
