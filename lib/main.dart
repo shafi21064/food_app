@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/Components/bottom_navigation.dart';
-import 'package:food_app/provider/item_provider.dart';
-import 'package:food_app/screens/home.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/src/data/global_widgets/bottom_navigation.dart';
+import 'package:food_app/src/controller/item_provider.dart';
+import 'package:food_app/src/modules/home/home.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -13,17 +14,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => ItemProvider()),
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-          primaryColor: Color(0xff7E7E7E),
-        ),
-        debugShowCheckedModeBanner: false,
-        home: BottomNavigation(),
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      // Use builder only if you need to use library outside ScreenUtilInit context
+      builder: (_ , child) {
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => ItemProvider()),
+          ],
+          child:MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'First Method',
+            // You can use the library anywhere in the app even in theme
+            theme: ThemeData(
+              primaryColor: Colors.black,
+              textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+            ),
+            home: BottomNavigation(),
+
+          ) ,
+
+        );
+      },
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/screens/Item_screen.dart';
-import 'package:food_app/screens/home.dart';
-import 'package:food_app/screens/search_screen.dart';
-import 'package:food_app/screens/user_screen.dart';
+import 'package:food_app/src/modules/cart/cart_screen.dart';
+import 'package:food_app/src/modules/home/home.dart';
+import 'package:food_app/src/modules/search/search_screen.dart';
+import 'package:food_app/src/modules/account/user_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -13,7 +13,7 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
 
-  static const pages = [HomeScreen(), ItemScreen(),SearchScreen(), UserScreen(),];
+  var  pages = [HomeScreen(), CartScreen(), SearchScreen(), UserScreen()];
 
   int currentIndex = 0;
 
@@ -24,7 +24,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         currentIndex: currentIndex,
         items: [
           BottomNavigationBarItem(icon: Image.asset('assets/images/b_home.png'), label: '' ),
-          BottomNavigationBarItem(icon: Image.asset('assets/images/b_item.png'), label: ''),
+          BottomNavigationBarItem(icon: Image.asset('assets/images/b_cart.png'), label: ''),
           BottomNavigationBarItem(icon: Image.asset('assets/images/b_search.png'), label: ''),
           BottomNavigationBarItem(icon: Image.asset('assets/images/b_user.png'), label: '')
         ],

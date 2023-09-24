@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/src/data/utils/const_color.dart';
 
 class DishItem extends StatelessWidget {
   String dishImage,
@@ -7,6 +9,7 @@ class DishItem extends StatelessWidget {
       dishPrice,
       dishLeft,
       dishRegularPrice;
+  var customColor =const CustomColor();
   DishItem(
       {super.key,
       required this.dishImage,
@@ -20,16 +23,16 @@ class DishItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.center, children: [
       Container(
-        padding: const EdgeInsets.all(8),
-        height: MediaQuery.sizeOf(context).height,
-        width: 325,
+        padding:  EdgeInsets.all(8.w),
+        height: 200.h,
+        width: 300.w,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
                   dishImage,
                 ),
                 fit: BoxFit.cover),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             color: Colors.red),
       ),
       Positioned(
@@ -37,8 +40,8 @@ class DishItem extends StatelessWidget {
         right: 10,
         child: Container(
           alignment: Alignment.center,
-          height: 40,
-          width: 40,
+          height: 40.h,
+          width: 40.w,
           decoration: const BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle,
@@ -52,8 +55,8 @@ class DishItem extends StatelessWidget {
         bottom: 15,
         child: Container(
           padding: const EdgeInsets.all(16),
-          height: 125,
-          width: 290,
+          height: 110.h,
+          width: 250.w,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
@@ -66,37 +69,37 @@ class DishItem extends StatelessWidget {
                 children: [
                   Text(
                     dishTitle,
-                    style: const TextStyle(
-                      color: Color(0xff3E4462),
-                      fontSize: 20,
+                    style:  TextStyle(
+                      color: customColor.deepBlue,
+                      fontSize: 20.sp,
                     ),
                   ),
-                  const SizedBox(
-                    height: 5,
+                   SizedBox(
+                    height: 5.h,
                   ),
                   Text(
                     dishSubTitle,
                     style:
-                        const TextStyle(color: Color(0xff7E7E7E), fontSize: 18),
+                         TextStyle(color: customColor.fadedBlack, fontSize: 18),
                   ),
-                  const SizedBox(
-                    height: 5,
+                   SizedBox(
+                    height: 5.h,
                   ),
                   Row(
                     children: [
                       Text(
                         dishPrice,
-                        style: const TextStyle(
-                            color: Color(0xff7E7E7E), fontSize: 16),
+                        style:  TextStyle(
+                            color: customColor.fadedBlack, fontSize: 16.sp),
                       ),
-                      const SizedBox(
-                        width: 20,
+                       SizedBox(
+                        width: 20.w,
                       ),
                       Text(
                         dishRegularPrice,
-                        style: const TextStyle(
-                            color: Color(0xff7E7E7E),
-                            fontSize: 14,
+                        style: TextStyle(
+                            color: customColor.fadedBlack,
+                            fontSize: 14.sp,
                             decoration: TextDecoration.lineThrough),
                       ),
                     ],
@@ -107,11 +110,11 @@ class DishItem extends StatelessWidget {
                 bottom: 0,
                 right: 0,
                 child: Container(
-                  height: 30,
-                  width: 50,
+                  height: 30.h,
+                  width: 50.w,
                   decoration: BoxDecoration(
-                      color: const Color(0xffEDA345),
-                      borderRadius: BorderRadius.circular(5)),
+                      color: customColor.lightYellow,
+                      borderRadius: BorderRadius.circular(5.r)),
                   child: Center(
                     child: Text(
                       '$dishLeft Left',
