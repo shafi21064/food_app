@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
-import 'package:food_app/src/data/utils/const_color.dart';
+import 'package:food_app/src/data/utils/custom_color.dart';
 
 class ItemInfo extends StatelessWidget {
   String dishTitle, subTitle;

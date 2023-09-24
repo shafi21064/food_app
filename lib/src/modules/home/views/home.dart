@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/data/global_widgets/app_bar.dart';
 import 'package:food_app/src/data/global_widgets/title_with_see_all.dart';
-import 'package:food_app/src/modules/cart/cart_screen.dart';
 import 'package:food_app/src/modules/home/local_widgets/home_greetings.dart';
 import 'package:food_app/src/modules/home/local_widgets/home_icon_list.dart';
 import 'package:food_app/src/modules/home/local_widgets/home_location.dart';
@@ -12,10 +11,6 @@ import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  buttonWork (){
-    print('work');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +42,7 @@ class HomeScreen extends StatelessWidget {
                title: 'Today\'s promo',
                buttonText: 'See all',
              ),
-              TodayPromo(
-               buttonWork: buttonWork(),
-             ),
+              TodayPromo(),
               //SizedBox(height: 5.h,),
               //const TodayPromo(),
 

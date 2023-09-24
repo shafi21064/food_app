@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/src/modules/cart/cart_screen.dart';
-import 'package:food_app/src/modules/home/home.dart';
+import 'package:food_app/src/modules/home/views/home.dart';
 import 'package:food_app/src/modules/search/search_screen.dart';
 import 'package:food_app/src/modules/account/user_screen.dart';
 

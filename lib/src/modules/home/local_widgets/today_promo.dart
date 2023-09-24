@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/controller/item_provider.dart';
 import 'package:food_app/src/data/global_widgets/dish_item.dart';
-import 'package:food_app/src/modules/cart/cart_screen.dart';
+import 'package:food_app/src/modules/home/views/promo_screen.dart';
 import 'package:provider/provider.dart';
 
 class TodayPromo extends StatelessWidget {
@@ -24,7 +24,7 @@ class TodayPromo extends StatelessWidget {
                 InkWell(
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                        CartScreen(
+                        PromoScreen(
                           dishTitle: itemProvider.itemList[index]['item_name'],
                           disSubTitle: itemProvider.itemList[index]['item_subname'],
                         )));

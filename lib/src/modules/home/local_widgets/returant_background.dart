@@ -6,7 +6,8 @@ import 'package:provider/provider.dart';
 
 class ResturantBackground extends StatelessWidget {
   String dishTitle, disSubTitle;
-  ResturantBackground({super.key, required this.dishTitle, required this.disSubTitle});
+  ResturantBackground(
+      {super.key, required this.dishTitle, required this.disSubTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -20,49 +21,56 @@ class ResturantBackground extends StatelessWidget {
             Container(
               height: 200.h,
               width: MediaQuery.sizeOf(context).width,
-              child: Image.asset('assets/images/resturant_background.png', fit: BoxFit.cover,),
+              child: Image.asset(
+                'assets/images/resturant_background.png',
+                fit: BoxFit.cover,
+              ),
             ),
             Positioned(
               top: 50,
               left: 16,
               child: InkWell(
-                onTap: (){
+                onTap: () {
                   Navigator.pop(context);
                 },
                 child: Container(
                   height: 40.h,
                   width: 40.w,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle
-                  ),
+                  decoration: const BoxDecoration(
+                      color: Colors.white, shape: BoxShape.circle),
                   child: Image.asset('assets/images/back.png'),
                 ),
               ),
             ),
-
             Positioned(
               top: 50,
               right: 16,
-              child: Container(
-                height: 40.h,
-                width: 40.w,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle
+              child: InkWell(
+                onTap: () {
+                  provider.setIsFavorite();
+                },
+                child: Container(
+                  height: 40.h,
+                  width: 40.w,
+                  decoration: const BoxDecoration(
+                      color: Colors.white, shape: BoxShape.circle),
+                  child: provider.isFavorite
+                      ? const Icon(
+                          Icons.favorite_border,
+                          color: Colors.red,
+                        )
+                      : const Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        ),
                 ),
-                child: Image.asset('assets/images/m_love.png'),
               ),
             )
           ],
         ),
         Positioned(
-          bottom: -120,
-            child: ItemInfo(
-              dishTitle: dishTitle,
-              subTitle: disSubTitle
-            )
-        )
+            bottom: -100,
+            child: ItemInfo(dishTitle: dishTitle, subTitle: disSubTitle))
       ],
     );
   }

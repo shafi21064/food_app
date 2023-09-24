@@ -13,7 +13,7 @@ class ItemProvider extends ChangeNotifier{
       'item_left' : '5'
     },
     {
-      'id' : 1,
+      'id' : 2,
       'item_pic' : 'assets/images/dish_two.png',
       'item_name' : 'Dish Name2',
       'item_subname' : 'Dish Subtitle',
@@ -22,7 +22,7 @@ class ItemProvider extends ChangeNotifier{
       'item_left' : '5'
     },
     {
-      'id' : 1,
+      'id' : 3,
       'item_pic' : 'assets/images/dish_one.png',
       'item_name' : 'Dish Name3',
       'item_subname' : 'Dish Subtitle',
@@ -31,7 +31,7 @@ class ItemProvider extends ChangeNotifier{
       'item_left' : '5'
     },
     {
-      'id' : 1,
+      'id' : 4,
       'item_pic' : 'assets/images/dish_two.png',
       'item_name' : 'Dish Name4',
       'item_subname' : 'Dish Subtitle',
@@ -40,4 +40,12 @@ class ItemProvider extends ChangeNotifier{
       'item_left' : '5'
     }
   ];
+
+  bool _isFavorite = false ;
+  bool get isFavorite => _isFavorite;
+
+  void setIsFavorite(){
+    _isFavorite = !_isFavorite;
+    notifyListeners();
+  }
 }
