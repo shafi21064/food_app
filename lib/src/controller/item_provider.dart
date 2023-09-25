@@ -41,7 +41,7 @@ class ItemProvider extends ChangeNotifier{
     }
   ];
 
-  bool _isFavorite = false ;
+  bool _isFavorite = true ;
   bool get isFavorite => _isFavorite;
 
   void setIsFavorite(){
