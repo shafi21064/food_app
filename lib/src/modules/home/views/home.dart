@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/data/global_widgets/app_bar.dart';
 import 'package:food_app/src/data/global_widgets/title_with_see_all.dart';
+import 'package:food_app/src/modules/home/local_widgets/dish_item.dart';
 import 'package:food_app/src/modules/home/local_widgets/home_greetings.dart';
 import 'package:food_app/src/modules/home/local_widgets/home_icon_list.dart';
 import 'package:food_app/src/modules/home/local_widgets/home_location.dart';
 import 'package:food_app/src/controller/item_provider.dart';
 import 'package:food_app/src/modules/home/local_widgets/today_promo.dart';
+import 'package:food_app/src/modules/see_all_promo/view/see_all_promo.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,6 +16,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    void seeAllButton(){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> SeeAllPromo()));
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xffF8F5F2),
       appBar: AppBar(
@@ -39,10 +46,13 @@ class HomeScreen extends StatelessWidget {
               ),
               const MenuIconList(),
              TitleWithSeeAll(
+               onPress: (){
+                 seeAllButton();
+               },
                title: 'Today\'s promo',
                buttonText: 'See all',
              ),
-              TodayPromo(),
+              DishItem(),
               //SizedBox(height: 5.h,),
               //const TodayPromo(),
 

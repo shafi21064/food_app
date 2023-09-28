@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/src/data/global_widgets/small_widget/small_custom_button.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
+import 'package:food_app/src/modules/home/local_widgets/start_rating.dart';
 
 class ReviewsTab extends StatelessWidget {
   ReviewsTab({super.key});
@@ -72,142 +74,47 @@ class ReviewsTab extends StatelessWidget {
           ),
           Column(
             children: [
-              Container(
-                  alignment: Alignment.center,
-                  height: 40,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: TextWidget(
-                    title: 'Add Review',
-                    fontSize: 15,
-                    color: Colors.white,
-                  )),
+              ContainerButton(
+                buttonName: 'Add Review',
+              ),
               SizedBox(
                 height: 20.h,
               ),
-              Row(
-                children: [
-                  TextWidget(title: '1 Star', fontSize: 16, color: Colors.black),
-                  SizedBox(width: 2.w,),
-                  RatingBar.builder(
-                    itemSize: 25,
-                    initialRating: 1,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                  ),
-                  TextWidget(title: '(6)', fontSize: 16, color: Colors.red),
-                ],
+              StarRating(
+                numberOfRating: '1',
+                ratePeople: '6',
+                initialRating: 1,
+              ),
+              SizedBox(height: 10.h,),
+
+              StarRating(
+                numberOfRating: '2',
+                ratePeople: '5',
+                initialRating: 2,
               ),
 
               SizedBox(height: 10.h,),
 
-              Row(
-                children: [
-                  TextWidget(title: '2 Star', fontSize: 16, color: Colors.black),
-                  SizedBox(width: 2.w,),
-                  RatingBar.builder(
-                    itemSize: 25,
-                    initialRating: 2,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                  ),
-                  TextWidget(title: '(5)', fontSize: 16, color: Colors.red),
-                ],
+              StarRating(
+                numberOfRating: '3',
+                ratePeople: '6',
+                initialRating: 3,
               ),
 
               SizedBox(height: 10.h,),
 
-              Row(
-                children: [
-                  TextWidget(title: '3 Star', fontSize: 16, color: Colors.black),
-                  SizedBox(width: 2.w,),
-                  RatingBar.builder(
-                    itemSize: 25,
-                    initialRating: 3,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                  ),
-                  TextWidget(title: '(5)', fontSize: 16, color: Colors.red),
-                ],
+              StarRating(
+                numberOfRating: '4',
+                ratePeople: '4',
+                initialRating: 4,
               ),
 
               SizedBox(height: 10.h,),
 
-              Row(
-                children: [
-                  TextWidget(title: '4 Star', fontSize: 16, color: Colors.black),
-                  SizedBox(width: 2.w,),
-                  RatingBar.builder(
-                    itemSize: 25,
-                    initialRating: 4,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                  ),
-                  TextWidget(title: '(5)', fontSize: 16, color: Colors.red),
-                ],
-              ),
-
-              SizedBox(height: 10.h,),
-
-              Row(
-                children: [
-                  TextWidget(title: '5 Star', fontSize: 16, color: Colors.black),
-                  SizedBox(width: 2.w,),
-                  RatingBar.builder(
-                    itemSize: 25,
-                    initialRating: 5,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                  ),
-                  TextWidget(title: '(5)', fontSize: 16, color: Colors.red),
-                ],
+              StarRating(
+                numberOfRating: '5',
+                ratePeople: '6',
+                initialRating: 5,
               ),
             ],
           )

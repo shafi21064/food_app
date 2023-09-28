@@ -2,6 +2,9 @@
 import 'package:flutter/cupertino.dart';
 
 class ItemProvider extends ChangeNotifier{
+
+  dynamic pageIndex = 0;
+
   dynamic itemList = [
     {
       'id' : 1,
