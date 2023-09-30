@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/src/controller/wish_list_controller.dart';
 import 'package:food_app/src/data/global_widgets/bottom_navigation.dart';
 import 'package:food_app/src/controller/item_provider.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         return MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (_) => ItemProvider()),
+            ChangeNotifierProvider(create: (_)=> WishListController())
           ],
           child:MaterialApp(
             debugShowCheckedModeBanner: false,
