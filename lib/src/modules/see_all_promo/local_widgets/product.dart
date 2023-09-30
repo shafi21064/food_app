@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/src/controller/cart_controller.dart';
 import 'package:food_app/src/controller/item_provider.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/small_custom_button.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/item_left_button.dart';
@@ -15,13 +16,14 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var itemProvider = Provider.of<ItemProvider>(context);
+
     return ListView.builder(
         itemCount: itemProvider.itemList.length,
         itemBuilder: (context, index) {
           return Container(
-            margin: const EdgeInsets.all(16),
-            padding: const EdgeInsets.only(left: 10, right: 10),
-            height: 150.h,
+            margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
+            padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+            height: 160.h,
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(5)),
@@ -61,14 +63,14 @@ class Product extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextWidget(
-                            title: 'Dish Name',
+                            title: itemProvider.itemList[index]['item_name'],
                             fontSize: 18,
                             color: Colors.black),
                         SizedBox(
                           height: 10.h,
                         ),
                         TextWidget(
-                            title: '180.00',
+                            title: itemProvider.itemList[index]['special_price'],
                             fontSize: 14,
                             color: customColor.fadedBlack),
                         SizedBox(

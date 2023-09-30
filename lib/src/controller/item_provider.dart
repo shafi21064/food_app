@@ -20,7 +20,7 @@ class ItemProvider extends ChangeNotifier{
       'item_pic' : 'assets/images/dish_two.png',
       'item_name' : 'Dish Name2',
       'item_subname' : 'Dish Subtitle',
-      'special_price' : '120',
+      'special_price' : '140',
       'regular_price' : '190',
       'item_left' : '5'
     },
