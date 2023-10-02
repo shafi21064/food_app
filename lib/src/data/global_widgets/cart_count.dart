@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 class CartCount extends StatelessWidget {
   var customColor = const CustomColor();
-   CartCount({super.key});
+  CartCount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +16,7 @@ class CartCount extends StatelessWidget {
       width: 100.w,
       height: 30.h,
       decoration: BoxDecoration(
-        color: customColor.cWhite,
-        borderRadius: BorderRadius.circular(5.r)
-      ),
+          color: customColor.cWhite, borderRadius: BorderRadius.circular(5.r)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -27,30 +25,35 @@ class CartCount extends StatelessWidget {
             height: 30.h,
             width: 30.w,
             decoration: BoxDecoration(
-              color: customColor.fadedWhite,
-              borderRadius: BorderRadius.circular(5.r)
-            ),
+                color: customColor.fadedWhite,
+                borderRadius: BorderRadius.circular(5.r)),
             child: InkWell(
-              onTap: (){
-                if(cartController.count >= 1){
-                  cartController.removeItem();
-                }
-              },
-                child: const Icon(Icons.minimize_rounded, color: Colors.white,)),
+                onTap: () {
+                  if(cartController.count >1){
+                    cartController.removeItem();
+                  }
+                },
+                child: const Icon(
+                  Icons.remove,
+                  color: Colors.white,
+                )),
           ),
-
-          TextWidget(title: cartController.count.toString(), fontSize: 16.sp, color: customColor.deepBlue),
-
+          TextWidget(
+              title: cartController.count.toString(),
+              fontSize: 16.sp,
+              color: customColor.deepBlue),
           Container(
             height: 30.h,
             width: 30.w,
             decoration: BoxDecoration(
                 color: customColor.cRed,
-                borderRadius: BorderRadius.circular(5.r)
-            ),
+                borderRadius: BorderRadius.circular(5.r)),
             child: InkWell(
-              onTap: ()=>  cartController.addItem(),
-                child: const Icon(Icons.add, color: Colors.white,)),
+                onTap: () => cartController.addItem(),
+                child: const Icon(
+                  Icons.add,
+                  color: Colors.white,
+                )),
           )
         ],
       ),

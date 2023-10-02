@@ -16,56 +16,46 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    void seeAllButton(){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> SeeAllPromo()));
+    void seeAllButton() {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SeeAllPromo()));
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xffF8F5F2),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const CustomAppBar(),
-        elevation: 0,
         backgroundColor: const Color(0xffF8F5F2),
-      ),
-      body: Padding(
-        padding:  const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-               HomeLocation(),
-               SizedBox(
-                height: 20.h,
-              ),
-               HomeGreeting(),
-               SizedBox(
-                height: 10.h,
-              ),
-              const MenuIconList(),
-             TitleWithSeeAll(
-               onPress: (){
-                 seeAllButton();
-               },
-               title: 'Today\'s promo',
-               buttonText: 'See all',
-             ),
-              DishItem(),
-              //SizedBox(height: 5.h,),
-              //const TodayPromo(),
-
-]
-    ),
-        )
-    )
-    );
-
-
-
-
-
-
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: const CustomAppBar(),
+          elevation: 0,
+          backgroundColor: const Color(0xffF8F5F2),
+        ),
+        body: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    HomeLocation(),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    HomeGreeting(),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    const MenuIconList(),
+                    TitleWithSeeAll(
+                      onPress: () {
+                        seeAllButton();
+                      },
+                      title: 'Today\'s promo',
+                      buttonText: 'See all',
+                    ),
+                    DishItem(),
+                    //SizedBox(height: 5.h,),
+                    //const TodayPromo(),
+                  ]),
+            )));
   }
 }

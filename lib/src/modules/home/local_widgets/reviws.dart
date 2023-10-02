@@ -85,32 +85,33 @@ class ReviewsTab extends StatelessWidget {
                 ratePeople: '6',
                 initialRating: 1,
               ),
-              SizedBox(height: 10.h,),
-
+              SizedBox(
+                height: 10.h,
+              ),
               StarRating(
                 numberOfRating: '2',
                 ratePeople: '5',
                 initialRating: 2,
               ),
-
-              SizedBox(height: 10.h,),
-
+              SizedBox(
+                height: 10.h,
+              ),
               StarRating(
                 numberOfRating: '3',
                 ratePeople: '6',
                 initialRating: 3,
               ),
-
-              SizedBox(height: 10.h,),
-
+              SizedBox(
+                height: 10.h,
+              ),
               StarRating(
                 numberOfRating: '4',
                 ratePeople: '4',
                 initialRating: 4,
               ),
-
-              SizedBox(height: 10.h,),
-
+              SizedBox(
+                height: 10.h,
+              ),
               StarRating(
                 numberOfRating: '5',
                 ratePeople: '6',

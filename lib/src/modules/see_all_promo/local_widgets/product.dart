@@ -6,7 +6,7 @@ import 'package:food_app/src/data/global_widgets/small_widget/small_custom_butto
 import 'package:food_app/src/data/global_widgets/small_widget/item_left_button.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
-import 'package:food_app/src/modules/see_all_promo/local_widgets/cart_count.dart';
+import 'package:food_app/src/data/global_widgets/cart_count.dart';
 import 'package:provider/provider.dart';
 
 class Product extends StatelessWidget {
@@ -16,22 +16,18 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var itemProvider = Provider.of<ItemProvider>(context);
-
-    return ListView.builder(
-        itemCount: itemProvider.itemList.length,
-        itemBuilder: (context, index) {
-          return Container(
+    return Container(
             margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
             padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
             height: 160.h,
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(5)),
+                color: Colors.white, borderRadius: BorderRadius.circular(5.r)),
             child: Column(
               children: [
                 Row(
                   children: [
-                    Container(
+                    SizedBox(
                       height: 96.h,
                       width: 72.w,
                       child: Stack(
@@ -41,10 +37,10 @@ class Product extends StatelessWidget {
                             height: 82.h,
                             width: 72.w,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(5.r),
                                 image: DecorationImage(
                                     image: AssetImage(
-                                      itemProvider.itemList[index]['item_pic'],
+                                      itemProvider.itemList[0]['item_pic'],
                                     ),
                                     fit: BoxFit.cover)),
                           ),
@@ -63,28 +59,32 @@ class Product extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextWidget(
-                            title: itemProvider.itemList[index]['item_name'],
-                            fontSize: 18,
+                            title: itemProvider.itemList[0]['item_name'],
+                            fontSize: 18.sp,
                             color: Colors.black),
                         SizedBox(
                           height: 10.h,
                         ),
                         TextWidget(
-                            title: itemProvider.itemList[index]['special_price'],
-                            fontSize: 14,
+                            title: itemProvider.itemList[0]
+                                ['special_price'],
+                            fontSize: 14.sp,
                             color: customColor.fadedBlack),
                         SizedBox(
                           height: 10.h,
                         ),
                         Row(
                           children: [
-                            Icon(Icons.delivery_dining_outlined, color: customColor.fadedBlack,),
+                            Icon(
+                              Icons.delivery_dining_outlined,
+                              color: customColor.fadedBlack,
+                            ),
                             SizedBox(
                               width: 5.w,
                             ),
                             TextWidget(
                                 title: 'Free Delivery',
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 color: customColor.fadedBlack),
                           ],
                         ),
@@ -97,11 +97,13 @@ class Product extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [CartCount(), ContainerButton(buttonName: 'Add To Cart')],
+                  children: [
+                    CartCount(),
+                    ContainerButton(buttonName: 'Add To Cart')
+                  ],
                 )
               ],
             ),
           );
-        });
   }
 }

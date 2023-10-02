@@ -31,8 +31,9 @@ class _PromoScreenState extends State<PromoScreen> {
 
                    child: Column(
                      children: [
-                       ResturantBackground(),
-                       const SizedBox(height: 100,),
+                       const ResturantBackground(),
+                       SizedBox(height: 100.h,),
+
                        TabBarViewCart()
                      ],
                    ),

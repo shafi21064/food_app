@@ -9,7 +9,7 @@ class ItemInfo extends StatelessWidget {
   String dishTitle, subTitle;
    ItemInfo({super.key, required this.dishTitle, required this.subTitle});
 
-var customColor = const CustomColor();
+var customColor =  CustomColor();
   @override
   Widget build(BuildContext context) {
     var itemProvider = Provider.of<ItemProvider>(context);
