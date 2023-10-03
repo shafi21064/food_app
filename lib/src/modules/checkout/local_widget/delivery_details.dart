@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
-import 'package:food_app/src/data/global_widgets/space_in_height.dart';
-import 'package:food_app/src/data/utils/custom_color.dart';
+import 'package:food_app/src/modules/checkout/checkout_pakage.dart';
 
 class DeliveryDetails extends StatelessWidget {
    const DeliveryDetails({super.key});

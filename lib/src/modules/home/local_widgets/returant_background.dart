@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_app/src/controller/item_provider.dart';
-import 'package:food_app/src/data/global_widgets/item_info.dart';
-import 'package:food_app/src/data/global_widgets/wish_icon.dart';
+import 'package:food_app/src/modules/home/home_package.dart';
+
 import 'package:provider/provider.dart';
 
 class ResturantBackground extends StatelessWidget {

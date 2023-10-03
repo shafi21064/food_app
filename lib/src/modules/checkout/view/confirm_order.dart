@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/src/modules/checkout/local_widget/confi_background.dart';
+import 'package:food_app/src/modules/checkout/local_widget/confirm_message.dart';
 
 class ConfirmOrder extends StatelessWidget {
   const ConfirmOrder({super.key});
@@ -11,7 +12,13 @@ class ConfirmOrder extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ConfiBackground(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ConfiBackground(),
+            ],
+          ),
+          ConfirmMessage()
         ],
       ),
     );

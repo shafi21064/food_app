@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/controller/item_provider.dart';
-import 'package:food_app/src/data/global_widgets/small_widget/item_left_button.dart';
-import 'package:food_app/src/data/global_widgets/small_widget/small_custom_button.dart';
-import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
-import 'package:food_app/src/data/global_widgets/space_in_height.dart';
-import 'package:food_app/src/data/global_widgets/space_in_width.dart';
-import 'package:food_app/src/data/utils/custom_color.dart';
-import 'package:food_app/src/data/global_widgets/cart_count.dart';
+import 'package:food_app/src/modules/checkout/checkout_pakage.dart';
 import 'package:provider/provider.dart';
 
 class BucketItem extends StatelessWidget {

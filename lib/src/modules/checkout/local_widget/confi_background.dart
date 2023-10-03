@@ -9,9 +9,6 @@ class ConfiBackground extends StatelessWidget {
     return Container(
       height: 293.h,
       width: 267.w,
-      decoration: BoxDecoration(
-        color: Colors.deepOrange
-      ),
       child: Image.asset('assets/images/confi_back.png'),
     );
   }

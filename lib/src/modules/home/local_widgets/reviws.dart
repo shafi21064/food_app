@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_app/src/data/global_widgets/small_widget/small_custom_button.dart';
-import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
-import 'package:food_app/src/data/utils/custom_color.dart';
-import 'package:food_app/src/modules/home/local_widgets/start_rating.dart';
+import 'package:food_app/src/modules/home/home_package.dart';
+
 
 class ReviewsTab extends StatelessWidget {
   const ReviewsTab({super.key});
