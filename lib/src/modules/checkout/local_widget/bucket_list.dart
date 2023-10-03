@@ -20,7 +20,7 @@ class BucketList extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(16),
-      height: 216.h,
+      height: 200.h,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -47,21 +47,19 @@ class BucketList extends StatelessWidget {
           ),
           SpaceInHeight(height: 10.h),
           Row(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 96.h,
+              Container(
+                height: 80.h,
                 width: 72.w,
-                child: Container(
-                  height: 82.h,
-                  width: 72.w,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.r),
-                      image: DecorationImage(
-                          image: AssetImage(
-                            itemProvider.itemList[0]['item_pic'],
-                          ),
-                          fit: BoxFit.cover)),
-                ),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.r),
+                    image: DecorationImage(
+                        image: AssetImage(
+                          itemProvider.itemList[0]['item_pic'],
+                        ),
+                        fit: BoxFit.cover)),
               ),
               SpaceInWidth(width: 20.w),
               Column(
@@ -92,7 +90,9 @@ class BucketList extends StatelessWidget {
                     ],
                   ),
                 ],
-              )
+              ),
+              SpaceInWidth(width: 70.w),
+              Icon(Icons.delete_rounded, color: customColor.cRed,)
             ],
           ),
           SpaceInHeight(height: 10.h),
