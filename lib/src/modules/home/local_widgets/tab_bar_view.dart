@@ -37,7 +37,7 @@ class _TabBarViewCartState extends State<TabBarViewCart> with TickerProviderStat
         ),
         Container(
           margin: const EdgeInsets.only(top: 5, left: 16, right: 16),
-          height: 250.h,
+          height: 260.h,
           width: MediaQuery.sizeOf(context).width,
           decoration: const BoxDecoration(
             color: Colors.white,

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/src/controller/item_provider.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
+import 'package:provider/provider.dart';
 
 class ItemInfo extends StatelessWidget {
   String dishTitle, subTitle;
    ItemInfo({super.key, required this.dishTitle, required this.subTitle});
 
-var customColor = const CustomColor();
+var customColor =  CustomColor();
   @override
   Widget build(BuildContext context) {
+    var itemProvider = Provider.of<ItemProvider>(context);
     return Container(
       height: 160.h,
       width: 250.w,

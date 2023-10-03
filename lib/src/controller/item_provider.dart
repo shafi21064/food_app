@@ -2,6 +2,9 @@
 import 'package:flutter/cupertino.dart';
 
 class ItemProvider extends ChangeNotifier{
+
+  dynamic pageIndex = 0;
+
   dynamic itemList = [
     {
       'id' : 1,
@@ -17,7 +20,7 @@ class ItemProvider extends ChangeNotifier{
       'item_pic' : 'assets/images/dish_two.png',
       'item_name' : 'Dish Name2',
       'item_subname' : 'Dish Subtitle',
-      'special_price' : '120',
+      'special_price' : '140',
       'regular_price' : '190',
       'item_left' : '5'
     },
@@ -41,11 +44,4 @@ class ItemProvider extends ChangeNotifier{
     }
   ];
 
-  bool _isFavorite = true ;
-  bool get isFavorite => _isFavorite;
-
-  void setIsFavorite(){
-    _isFavorite = !_isFavorite;
-    notifyListeners();
-  }
 }

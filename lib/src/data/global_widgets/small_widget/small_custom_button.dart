@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
 
-class CustomButton extends StatelessWidget {
+class ContainerButton extends StatelessWidget {
   String buttonName;
   var customColor =  CustomColor();
-   CustomButton({super.key, required this.buttonName});
+   ContainerButton({super.key, required this.buttonName});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(16),
-      child: Container(
+    return Container(
         alignment: Alignment.center,
-        height: 50.h,
-        width: MediaQuery.sizeOf(context).width,
+        height: 40,
+        width: 100,
         decoration: BoxDecoration(
-          color: customColor.cRed,
-          borderRadius: BorderRadius.circular(10)
-        ),
+            color: customColor.cRed,
+            borderRadius: BorderRadius.circular(5)),
         child: TextWidget(
           title: buttonName,
+          fontSize: 15,
           color: Colors.white,
-          fontSize: 18.sp,)
-      ),
-    );
+        ));
   }
 }
