@@ -14,7 +14,6 @@ class DishItem extends StatefulWidget {
 }
 
 class _DishItemState extends State<DishItem> {
-  var customColor = const CustomColor();
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +71,7 @@ class _DishItemState extends State<DishItem> {
                             Text(
                               itemProvider.itemList[index]['item_name'],
                               style: TextStyle(
-                                color: customColor.deepBlue,
+                                color: CustomColor.deepBlue,
                                 fontSize: 20.sp,
                               ),
                             ),
@@ -82,7 +81,7 @@ class _DishItemState extends State<DishItem> {
                             Text(
                               itemProvider.itemList[index]['item_subname'],
                               style: TextStyle(
-                                  color: customColor.fadedBlack, fontSize: 18),
+                                  color: CustomColor.fadedBlack, fontSize: 18),
                             ),
                             SizedBox(
                               height: 5.h,
@@ -92,7 +91,7 @@ class _DishItemState extends State<DishItem> {
                                 Text(
                                   itemProvider.itemList[index]['special_price'],
                                   style: TextStyle(
-                                      color: customColor.fadedBlack,
+                                      color: CustomColor.fadedBlack,
                                       fontSize: 16.sp),
                                 ),
                                 SizedBox(
@@ -101,7 +100,7 @@ class _DishItemState extends State<DishItem> {
                                 Text(
                                   itemProvider.itemList[index]['regular_price'],
                                   style: TextStyle(
-                                      color: customColor.fadedBlack,
+                                      color: CustomColor.fadedBlack,
                                       fontSize: 14.sp,
                                       decoration: TextDecoration.lineThrough),
                                 ),

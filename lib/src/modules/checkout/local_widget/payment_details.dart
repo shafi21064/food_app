@@ -6,13 +6,12 @@ import 'package:food_app/src/data/utils/custom_color.dart';
 import 'package:food_app/src/modules/checkout/local_widget/text_details_row.dart';
 
 class PaymentDetails extends StatelessWidget {
-  var customColor = CustomColor();
-  PaymentDetails({super.key});
+  const PaymentDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: EdgeInsets.all(16),
       padding: EdgeInsets.all(16),
       height: 185.h,
       width: MediaQuery.sizeOf(context).width,
@@ -26,7 +25,7 @@ class PaymentDetails extends StatelessWidget {
           TextWidget(
               title: 'Payment',
               fontSize: 20.sp,
-              color: customColor.deepBlue
+              color: CustomColor.deepBlue
           ),
           SpaceInHeight(height: 20.h),
           TextDetailsRow(
@@ -42,7 +41,7 @@ class PaymentDetails extends StatelessWidget {
           Container(
             height: 1.h,
             width: MediaQuery.sizeOf(context).width,
-            color: customColor.fadedWhite,
+            color: CustomColor.fadedWhite,
           ),
           SpaceInHeight(height: 20.h),
           TextDetailsRow(

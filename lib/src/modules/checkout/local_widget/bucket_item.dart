@@ -10,41 +10,22 @@ import 'package:food_app/src/data/utils/custom_color.dart';
 import 'package:food_app/src/data/global_widgets/cart_count.dart';
 import 'package:provider/provider.dart';
 
-class BucketList extends StatelessWidget {
-  var customColor = CustomColor();
-   BucketList({super.key});
+class BucketItem extends StatelessWidget {
+   const BucketItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     var itemProvider = Provider.of<ItemProvider>(context);
     return Container(
-      margin: const EdgeInsets.all(16),
+      margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
       padding: const EdgeInsets.all(16),
-      height: 200.h,
+      height: 160.h,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(5.r)),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextWidget(
-                  title: 'My Bucket',
-                  fontSize: 20.sp,
-                  color: customColor.deepBlue
-              ),
-              TextButton(
-                  onPressed: (){},
-                  child: TextWidget(
-                    title: '+ Add item',
-                    fontSize: 14.sp,
-                    color: customColor.cRed,
-                  )
-              )
-            ],
-          ),
           SpaceInHeight(height: 10.h),
           Row(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,25 +55,25 @@ class BucketList extends StatelessWidget {
                       title: itemProvider.itemList[0]
                       ['special_price'],
                       fontSize: 14.sp,
-                      color: customColor.fadedBlack),
+                      color: CustomColor.fadedBlack),
                   SpaceInHeight(height: 10.h),
                   Row(
                     children: [
                       Icon(
                         Icons.delivery_dining_outlined,
-                        color: customColor.fadedBlack,
+                        color: CustomColor.fadedBlack,
                       ),
                       SpaceInWidth(width: 5.w),
                       TextWidget(
                           title: 'Free Delivery',
                           fontSize: 14.sp,
-                          color: customColor.fadedBlack),
+                          color: CustomColor.fadedBlack),
                     ],
                   ),
                 ],
               ),
               SpaceInWidth(width: 70.w),
-              Icon(Icons.delete_rounded, color: customColor.cRed,)
+              Icon(Icons.delete_rounded, color: CustomColor.cRed,)
             ],
           ),
           SpaceInHeight(height: 10.h),

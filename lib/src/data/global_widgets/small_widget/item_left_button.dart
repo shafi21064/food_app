@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
 
 class ItemLeftButton extends StatelessWidget {
-  var customColor =  CustomColor();
   String dishLeft;
    ItemLeftButton({super.key, required this.dishLeft});
 
@@ -14,7 +13,7 @@ class ItemLeftButton extends StatelessWidget {
       height: 30.h,
       width: 50.w,
       decoration: BoxDecoration(
-          color: customColor.lightYellow,
+          color: CustomColor.lightYellow,
           borderRadius: BorderRadius.circular(5.r)),
       child: Text(
         '$dishLeft Left',

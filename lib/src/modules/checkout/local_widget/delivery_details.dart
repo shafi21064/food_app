@@ -5,8 +5,7 @@ import 'package:food_app/src/data/global_widgets/space_in_height.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
 
 class DeliveryDetails extends StatelessWidget {
-   DeliveryDetails({super.key});
-  var customColor = const CustomColor();
+   const DeliveryDetails({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,13 +29,13 @@ class DeliveryDetails extends StatelessWidget {
                   TextWidget(
                       title: 'Delivery to',
                       fontSize: 14.sp,
-                      color: customColor.fadedBlack
+                      color: CustomColor.fadedBlack
                   ),
                   SpaceInHeight(height: 10),
                   TextWidget(
                       title: 'Jl. Jayakatwang no 301',
                       fontSize: 18.sp,
-                      color: customColor.deepBlue
+                      color: CustomColor.deepBlue
                   )
                 ],
               ),
@@ -48,7 +47,7 @@ class DeliveryDetails extends StatelessWidget {
           ),
           Container(
             height: 40.h,
-            color: customColor.fadedWhite,
+            color: CustomColor.fadedWhite,
             child: TextFormField(
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
@@ -5,14 +6,13 @@ import 'package:food_app/src/data/global_widgets/space_in_height.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
 
 class SocialDistance extends StatefulWidget {
-  SocialDistance({super.key});
+  const SocialDistance({super.key});
 
   @override
   State<SocialDistance> createState() => _SocialDistanceState();
 }
 
 class _SocialDistanceState extends State<SocialDistance> {
-  var customColor = CustomColor();
   var switchIsOn = true;
 
   @override
@@ -33,16 +33,16 @@ class _SocialDistanceState extends State<SocialDistance> {
               TextWidget(
                   title: 'Keep Social Distancing',
                   fontSize: 18.sp,
-                  color: customColor.deepBlue),
+                  color: CustomColor.deepBlue),
               SpaceInHeight(height: 8.h),
               TextWidget(
                   title: 'Leave your order on the doorstep',
                   fontSize: 14.sp,
-                  color: customColor.fadedBlack)
+                  color: CustomColor.fadedBlack)
             ],
           ),
-          Switch(
-              activeColor: customColor.cRed,
+          CupertinoSwitch(
+              activeColor: CustomColor.cRed,
               value: switchIsOn,
               onChanged: (value) {
                 setState(() {

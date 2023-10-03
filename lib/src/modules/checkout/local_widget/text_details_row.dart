@@ -4,7 +4,6 @@ import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
 
 class TextDetailsRow extends StatelessWidget {
-  var customColor = CustomColor();
   String pricingPurpose, price;
   TextDetailsRow({super.key, required this.pricingPurpose, required this.price});
 
@@ -16,12 +15,12 @@ class TextDetailsRow extends StatelessWidget {
         TextWidget(
             title: pricingPurpose,
             fontSize: 16.sp,
-            color: customColor.deepBlue
+            color: CustomColor.deepBlue
         ),
         TextWidget(
             title: price,
             fontSize: 16.sp,
-            color: customColor.deepBlue
+            color: CustomColor.deepBlue
         )
       ],
     );

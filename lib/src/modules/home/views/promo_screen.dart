@@ -44,6 +44,7 @@ class _PromoScreenState extends State<PromoScreen> {
                Expanded(
                  //flex: 1,
                  child: CustomButton(
+                   widthSize: MediaQuery.sizeOf(context).width,
                    buttonName: 'Add To Cart',
                  ),
                )

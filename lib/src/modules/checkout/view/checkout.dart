@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/src/data/global_widgets/custom_button.dart';
-import 'package:food_app/src/data/utils/custom_color.dart';
-import 'package:food_app/src/modules/checkout/local_widget/bucket_list.dart';
-import 'package:food_app/src/modules/checkout/local_widget/delivery_details.dart';
-import 'package:food_app/src/modules/checkout/local_widget/payment_details.dart';
-import 'package:food_app/src/modules/checkout/local_widget/social_destance.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/src/data/global_widgets/space_in_height.dart';
+import 'package:food_app/src/modules/checkout/checkout_pakage.dart';
+import 'package:food_app/src/modules/checkout/view/confi_order.dart';
 
 class CheckOut extends StatelessWidget {
-  var customColor = CustomColor();
-   CheckOut({super.key});
+  const CheckOut({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF8F5F2),
+      backgroundColor: CustomColor.backGround,
       appBar: AppBar(
-        title: Text("Checkout", style: TextStyle(color: customColor.deepBlue),),
+        title: Text("Checkout", style: TextStyle(color: CustomColor.deepBlue),),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
@@ -27,19 +24,22 @@ class CheckOut extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SocialDistance(),
-                  DeliveryDetails(),
-                  BucketList(),
-                  PaymentDetails()
+                  const SocialDistance(),
+                  const DeliveryDetails(),
+                  SpaceInHeight(height: 10.h),
+                  const BucketTitleWithAddItem(),
+                  const BucketItemList(),
+                  const PaymentDetails()
                 ],
               ),
             ),
           ),
-          Expanded(
-            //flex: 1,
-            child: CustomButton(
-              buttonName: 'Place order',
-            ),
+          CustomButton(
+            onPress: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> ConfirmOrder()));
+            },
+            widthSize: MediaQuery.sizeOf(context).width,
+            buttonName: 'Place order',
           )
         ],
       )

@@ -4,7 +4,6 @@ import 'package:food_app/src/data/utils/custom_color.dart';
 
 class ContainerButton extends StatelessWidget {
   String buttonName;
-  var customColor =  CustomColor();
    ContainerButton({super.key, required this.buttonName});
 
   @override
@@ -14,7 +13,7 @@ class ContainerButton extends StatelessWidget {
         height: 40,
         width: 100,
         decoration: BoxDecoration(
-            color: customColor.cRed,
+            color: CustomColor.cRed,
             borderRadius: BorderRadius.circular(5)),
         child: TextWidget(
           title: buttonName,

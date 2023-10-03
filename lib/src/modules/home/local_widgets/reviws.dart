@@ -7,9 +7,7 @@ import 'package:food_app/src/data/utils/custom_color.dart';
 import 'package:food_app/src/modules/home/local_widgets/start_rating.dart';
 
 class ReviewsTab extends StatelessWidget {
-  ReviewsTab({super.key});
-
-  var customColor = const CustomColor();
+  const ReviewsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +35,11 @@ class ReviewsTab extends StatelessWidget {
                     TextSpan(
                         text: '/',
                         style: TextStyle(
-                            fontSize: 14.sp, color: customColor.fadedBlack)),
+                            fontSize: 14.sp, color: CustomColor.fadedBlack)),
                     TextSpan(
                         text: '5.0',
                         style: TextStyle(
-                            fontSize: 14.sp, color: customColor.fadedBlack))
+                            fontSize: 14.sp, color: CustomColor.fadedBlack))
                   ])),
               // SizedBox(
               //   height: 25.h,

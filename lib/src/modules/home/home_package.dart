@@ -1,0 +1,12 @@
+export 'local_widgets/dish_item.dart';
+export 'local_widgets/home_greetings.dart';
+export 'local_widgets/home_icon_list.dart';
+export 'local_widgets/home_location.dart';
+export 'local_widgets/info_tab.dart';
+export 'local_widgets/returant_background.dart';
+export 'local_widgets/reviws.dart';
+export 'local_widgets/start_rating.dart';
+export 'local_widgets/tab_bar_view.dart';
+export '../../data/global_widgets/title_with_see_all.dart';
+export '../../data/global_widgets/app_bar.dart';
+export '../see_all_promo/view/see_all_promo.dart';

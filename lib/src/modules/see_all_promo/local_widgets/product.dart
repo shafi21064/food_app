@@ -10,9 +10,7 @@ import 'package:food_app/src/data/global_widgets/cart_count.dart';
 import 'package:provider/provider.dart';
 
 class Product extends StatelessWidget {
-  Product({super.key});
-
-  var customColor = const CustomColor();
+  const Product({super.key});
   @override
   Widget build(BuildContext context) {
     var itemProvider = Provider.of<ItemProvider>(context);
@@ -69,7 +67,7 @@ class Product extends StatelessWidget {
                             title: itemProvider.itemList[0]
                                 ['special_price'],
                             fontSize: 14.sp,
-                            color: customColor.fadedBlack),
+                            color: CustomColor.fadedBlack),
                         SizedBox(
                           height: 10.h,
                         ),
@@ -77,7 +75,7 @@ class Product extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.delivery_dining_outlined,
-                              color: customColor.fadedBlack,
+                              color: CustomColor.fadedBlack,
                             ),
                             SizedBox(
                               width: 5.w,
@@ -85,7 +83,7 @@ class Product extends StatelessWidget {
                             TextWidget(
                                 title: 'Free Delivery',
                                 fontSize: 14.sp,
-                                color: customColor.fadedBlack),
+                                color: CustomColor.fadedBlack),
                           ],
                         ),
                       ],

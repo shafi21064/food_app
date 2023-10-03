@@ -6,7 +6,6 @@ import 'package:food_app/src/data/utils/custom_color.dart';
 import 'package:provider/provider.dart';
 
 class CartCount extends StatelessWidget {
-  var customColor = const CustomColor();
   CartCount({super.key});
 
   @override
@@ -16,7 +15,7 @@ class CartCount extends StatelessWidget {
       width: 100.w,
       height: 30.h,
       decoration: BoxDecoration(
-          color: customColor.cWhite, borderRadius: BorderRadius.circular(5.r)),
+          color: CustomColor.cWhite, borderRadius: BorderRadius.circular(5.r)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,7 +24,7 @@ class CartCount extends StatelessWidget {
             height: 30.h,
             width: 30.w,
             decoration: BoxDecoration(
-                color: customColor.fadedWhite,
+                color: CustomColor.fadedWhite,
                 borderRadius: BorderRadius.circular(5.r)),
             child: InkWell(
                 onTap: () {
@@ -41,12 +40,12 @@ class CartCount extends StatelessWidget {
           TextWidget(
               title: cartController.count.toString(),
               fontSize: 16.sp,
-              color: customColor.deepBlue),
+              color: CustomColor.deepBlue),
           Container(
             height: 30.h,
             width: 30.w,
             decoration: BoxDecoration(
-                color: customColor.cRed,
+                color: CustomColor.cRed,
                 borderRadius: BorderRadius.circular(5.r)),
             child: InkWell(
                 onTap: () => cartController.addItem(),

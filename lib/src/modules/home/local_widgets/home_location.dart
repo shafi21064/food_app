@@ -3,10 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
 
 class HomeLocation extends StatelessWidget {
-
-   var customColor = const CustomColor();
-
-   HomeLocation({super.key});
+   const HomeLocation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +21,11 @@ class HomeLocation extends StatelessWidget {
           children: [
             Text(
               'Location',
-              style: TextStyle(fontSize: 16.sp, color: customColor.fadedBlack),
+              style: TextStyle(fontSize: 16.sp, color: CustomColor.fadedBlack),
             ),
             Icon(
               Icons.keyboard_arrow_down,
-              color: customColor.fadedBlack,
+              color: CustomColor.fadedBlack,
             )
           ],
         ),
