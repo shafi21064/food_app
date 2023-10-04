@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_app/src/modules/home/local_widgets/info_tab.dart';
-import 'package:food_app/src/modules/home/local_widgets/reviws.dart';
+import 'package:food_app/src/modules/home/home_package.dart';
 
 class TabBarViewCart extends StatefulWidget {
    TabBarViewCart({super.key});
@@ -37,7 +36,7 @@ class _TabBarViewCartState extends State<TabBarViewCart> with TickerProviderStat
         ),
         Container(
           margin: const EdgeInsets.only(top: 5, left: 16, right: 16),
-          height: 250.h,
+          height: 260.h,
           width: MediaQuery.sizeOf(context).width,
           decoration: const BoxDecoration(
             color: Colors.white,

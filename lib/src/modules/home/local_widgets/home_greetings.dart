@@ -4,9 +4,7 @@ import 'package:food_app/src/data/utils/custom_color.dart';
 
 class HomeGreeting extends StatelessWidget {
 
-  var constColor = const CustomColor();
-
-   HomeGreeting({super.key});
+   const HomeGreeting({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +17,14 @@ class HomeGreeting extends StatelessWidget {
           children: [
             Text(
               'Hello, Yahya',
-              style: TextStyle(fontSize: 28.sp, color: constColor.deepBlue),
+              style: TextStyle(fontSize: 28.sp, color: CustomColor.deepBlue),
             ),
             SizedBox(
               height: 10.h,
             ),
             Text(
               'What do you want to eat?',
-              style: TextStyle(fontSize: 16.sp, color: constColor.fadedBlack),
+              style: TextStyle(fontSize: 16.sp, color: CustomColor.fadedBlack),
             )
           ],
         ));

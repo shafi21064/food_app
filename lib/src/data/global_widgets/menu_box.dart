@@ -4,7 +4,6 @@ import 'package:food_app/src/data/utils/custom_color.dart';
 
 class MenuBox extends StatelessWidget {
   String menuTitle, menuIcon;
-  var customColor = const CustomColor();
    MenuBox({
     super.key,
     required this.menuIcon,
@@ -34,7 +33,7 @@ class MenuBox extends StatelessWidget {
            Text(
             menuTitle,
             style: TextStyle(
-                color: customColor.fadedBlack,
+                color: CustomColor.fadedBlack,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.bold
             ),

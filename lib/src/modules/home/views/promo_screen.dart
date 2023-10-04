@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_app/src/data/global_widgets/custom_button.dart';
-import 'package:food_app/src/data/global_widgets/dish_item.dart';
-import 'package:food_app/src/modules/home/local_widgets/returant_background.dart';
-import 'package:food_app/src/modules/home/local_widgets/tab_bar_view.dart';
-
+import 'package:food_app/src/modules/home/home_package.dart';
 
 class PromoScreen extends StatefulWidget {
-  String? dishTitle, disSubTitle;
-   PromoScreen({super.key,  this.dishTitle,  this.disSubTitle});
+
+   const PromoScreen({super.key});
 
   @override
   State<PromoScreen> createState() => _PromoScreenState();
@@ -17,6 +13,7 @@ class PromoScreen extends StatefulWidget {
 class _PromoScreenState extends State<PromoScreen> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         backgroundColor: const Color(0xffF8F5F2),
       body:
@@ -28,11 +25,9 @@ class _PromoScreenState extends State<PromoScreen> {
 
                    child: Column(
                      children: [
-                       ResturantBackground(
-                         dishTitle: '${widget.dishTitle}',
-                         disSubTitle: '${widget.disSubTitle}',
-                       ),
-                       const SizedBox(height: 100,),
+                       const ResturantBackground(),
+                       SizedBox(height: 100.h,),
+
                        TabBarViewCart()
                      ],
                    ),
@@ -40,10 +35,10 @@ class _PromoScreenState extends State<PromoScreen> {
                ),
 
 
-
                Expanded(
                  //flex: 1,
                  child: CustomButton(
+                   widthSize: MediaQuery.sizeOf(context).width,
                    buttonName: 'Add To Cart',
                  ),
                )
