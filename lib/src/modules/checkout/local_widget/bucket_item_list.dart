@@ -11,7 +11,7 @@ class BucketItemList extends StatelessWidget {
   Widget build(BuildContext context) {
     var itemProvider = Provider.of<ItemProvider>(context);
     return SizedBox(
-      height: 180.h,
+      height: 190.h,
       width: MediaQuery.sizeOf(context).width,
       child: ListView.builder(
         itemCount: itemProvider.itemList.length,

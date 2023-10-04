@@ -10,7 +10,7 @@ class PaymentDetails extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(16),
       padding: EdgeInsets.all(16),
-      height: 185.h,
+      height: 190.h,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
         color: Colors.white,

@@ -13,70 +13,75 @@ class BucketItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
       padding: const EdgeInsets.all(16),
-      height: 160.h,
+      height: 170.h,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(5.r)),
-      child: Column(
+      child: Stack(
         children: [
-          SpaceInHeight(height: 10.h),
-          Row(
-            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Positioned(
+              top: 10,
+              right: 10,
+              child: Icon(Icons.delete_rounded, color: CustomColor.cRed,)),
+          Column(
             children: [
-              Container(
-                height: 80.h,
-                width: 72.w,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r),
-                    image: DecorationImage(
-                        image: AssetImage(
-                          itemProvider.itemList[0]['item_pic'],
-                        ),
-                        fit: BoxFit.cover)),
-              ),
-              SpaceInWidth(width: 20.w),
-              Column(
+              SpaceInHeight(height: 10.h),
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextWidget(
-                      title: itemProvider.itemList[0]['item_name'],
-                      fontSize: 18.sp,
-                      color: Colors.black),
-                  SpaceInHeight(height: 10.h),
-                  TextWidget(
-                      title: itemProvider.itemList[0]
-                      ['special_price'],
-                      fontSize: 14.sp,
-                      color: CustomColor.fadedBlack),
-                  SpaceInHeight(height: 10.h),
-                  Row(
+                  Container(
+                    height: 80.h,
+                    width: 72.w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.r),
+                        image: DecorationImage(
+                            image: AssetImage(
+                              itemProvider.itemList[0]['item_pic'],
+                            ),
+                            fit: BoxFit.cover)),
+                  ),
+                  SpaceInWidth(width: 20.w),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.delivery_dining_outlined,
-                        color: CustomColor.fadedBlack,
-                      ),
-                      SpaceInWidth(width: 5.w),
                       TextWidget(
-                          title: 'Free Delivery',
+                          title: itemProvider.itemList[0]['item_name'],
+                          fontSize: 18.sp,
+                          color: Colors.black),
+                      SpaceInHeight(height: 10.h),
+                      TextWidget(
+                          title: itemProvider.itemList[0]
+                          ['special_price'],
                           fontSize: 14.sp,
                           color: CustomColor.fadedBlack),
+                      SpaceInHeight(height: 10.h),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.delivery_dining_outlined,
+                            color: CustomColor.fadedBlack,
+                          ),
+                          SpaceInWidth(width: 5.w),
+                          TextWidget(
+                              title: 'Free Delivery',
+                              fontSize: 14.sp,
+                              color: CustomColor.fadedBlack),
+                        ],
+                      ),
                     ],
                   ),
                 ],
               ),
-              SpaceInWidth(width: 70.w),
-              Icon(Icons.delete_rounded, color: CustomColor.cRed,)
+              SpaceInHeight(height: 10.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CartCount(),
+                ],
+              )
             ],
           ),
-          SpaceInHeight(height: 10.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              CartCount(),
-            ],
-          )
         ],
       ),
     );

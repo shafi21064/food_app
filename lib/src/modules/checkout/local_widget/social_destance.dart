@@ -18,7 +18,7 @@ class _SocialDistanceState extends State<SocialDistance> {
     return Container(
       margin: EdgeInsets.all(16.w),
       padding: EdgeInsets.all(16.w),
-      height: 80.h,
+      height: 90.h,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(5.r)),
