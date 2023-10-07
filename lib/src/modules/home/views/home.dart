@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                       title: 'Today\'s promo',
                       buttonText: 'See all',
                     ),
-                    DishItem(),
+                    DishItemList(),
                     //SizedBox(height: 5.h,),
                     //const TodayPromo(),
                   ]),

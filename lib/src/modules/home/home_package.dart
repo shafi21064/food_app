@@ -1,4 +1,4 @@
-export 'local_widgets/dish_item.dart';
+export 'local_widgets/dish_item_list.dart';
 export 'local_widgets/home_greetings.dart';
 export 'local_widgets/home_icon_list.dart';
 export 'local_widgets/home_location.dart';

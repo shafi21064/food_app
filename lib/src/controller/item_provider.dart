@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 
 class ItemProvider extends ChangeNotifier{
 
-  dynamic pageIndex = 0;
 
   dynamic itemList = [
     {
@@ -13,7 +12,8 @@ class ItemProvider extends ChangeNotifier{
       'item_subname' : 'Dish Subtitle',
       'special_price' : '120',
       'regular_price' : '180',
-      'item_left' : '5'
+      'item_left' : '5',
+      'is_favorite' : false
     },
     {
       'id' : 2,
@@ -22,7 +22,8 @@ class ItemProvider extends ChangeNotifier{
       'item_subname' : 'Dish Subtitle',
       'special_price' : '140',
       'regular_price' : '190',
-      'item_left' : '5'
+      'item_left' : '5',
+      'is_favorite' : false
     },
     {
       'id' : 3,
@@ -31,7 +32,8 @@ class ItemProvider extends ChangeNotifier{
       'item_subname' : 'Dish Subtitle',
       'special_price' : '120',
       'regular_price' : '180',
-      'item_left' : '5'
+      'item_left' : '5',
+      'is_favorite' : false
     },
     {
       'id' : 4,
@@ -40,8 +42,46 @@ class ItemProvider extends ChangeNotifier{
       'item_subname' : 'Dish Subtitle',
       'special_price' : '120',
       'regular_price' : '180',
-      'item_left' : '5'
+      'item_left' : '5',
+      'is_favorite' : false
     }
   ];
+
+  List _wishlist = [];
+
+  List get wishlists => _wishlist;
+
+
+  void setToWishlistItem(item) {
+    if (item["is_favorite"]) {
+      _wishlist.add(item);
+      } else {
+        _wishlist.remove(item);
+      }
+      print(_wishlist.length);
+      print("wishlist");
+       notifyListeners();
+    }
+
+  // void removeFromWishList(item){
+  //   if(item['is_favorite'] == false) {
+  //     _wishlist.remove(item);
+  //   }
+  //   notifyListeners();
+  // }
+
+
+  List get itemLists => itemList;
+
+  void setIsFavorite(index) {
+    if (itemList[index]['is_favorite']) {
+      itemList[index]['is_favorite'] = false;
+      setToWishlistItem(itemList[index]);
+    } else {
+      itemList[index]['is_favorite'] = true;
+      setToWishlistItem(itemList[index]);
+    }
+    notifyListeners();
+  }
 
 }
