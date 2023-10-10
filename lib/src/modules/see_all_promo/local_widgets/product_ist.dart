@@ -17,11 +17,11 @@ class ProductList extends StatelessWidget {
             itemProvider.setAddToCart(index);
           },
           minimizeTap: (){
-            itemProvider.addItem(index);
+
           },
 
           addTap: (){
-            itemProvider.removeItem(index);
+
           },
 
           addToCart: itemProvider.itemList[index]['in_cart'],
