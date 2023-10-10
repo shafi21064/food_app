@@ -27,7 +27,7 @@ class CheckOut extends StatelessWidget {
                   const DeliveryDetails(),
                   SpaceInHeight(height: 10.h),
                   const BucketTitleWithAddItem(),
-                  const BucketItemList(),
+                   BucketItemList(),
                   const PaymentDetails()
                 ],
               ),

@@ -12,7 +12,24 @@ class ProductList extends StatelessWidget {
     return ListView.builder(
       itemCount: itemProvider.itemList.length,
         itemBuilder: (context, index){
-        return Product();
+        return Product(
+          onPress: (){
+            itemProvider.setAddToCart(index);
+          },
+          minimizeTap: (){
+            itemProvider.addItem(index);
+          },
+
+          addTap: (){
+            itemProvider.removeItem(index);
+          },
+
+          addToCart: itemProvider.itemList[index]['in_cart'],
+          dishName: itemProvider.itemList[index]['item_name'],
+          itemPic: itemProvider.itemList[index]['item_pic'],
+          itemLeft: itemProvider.itemList[index]['item_left'],
+          price: itemProvider.itemList[index]['special_price'],
+        );
         }
     );
   }

@@ -18,7 +18,7 @@ class FavoriteItemList extends StatelessWidget {
             itemPrice: wishProvider.wishlists[index]['special_price'],
             onpress: (){
 
-                wishProvider.setIsFavorite(index);
+                wishProvider.removeToWishlist(wishProvider.wishlists[index]);
             },
               favorite: wishProvider.wishlists[index]['is_favorite']
           );

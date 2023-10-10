@@ -5,7 +5,18 @@ import 'package:food_app/src/modules/checkout/checkout_pakage.dart';
 import 'package:provider/provider.dart';
 
 class BucketItem extends StatelessWidget {
-   const BucketItem({super.key});
+  String itemName, itemPrice,itemPic;
+  dynamic onDelete,minimizeTap, addTap;
+    BucketItem({
+      super.key,
+      required this.itemName,
+      required this.itemPic,
+      required this.itemPrice,
+      required this.onDelete,
+      required this.minimizeTap,
+      required this.addTap
+
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +32,12 @@ class BucketItem extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-              top: 10,
-              right: 10,
-              child: Icon(Icons.delete_rounded, color: CustomColor.cRed,)),
+              top: 0,
+              right: 0,
+              child: IconButton(
+                onPressed: onDelete,
+                  icon: Icon(Icons.delete_rounded,
+                    color: CustomColor.cRed,))),
           Column(
             children: [
               SpaceInHeight(height: 10.h),
@@ -37,7 +51,7 @@ class BucketItem extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5.r),
                         image: DecorationImage(
                             image: AssetImage(
-                              itemProvider.itemList[0]['item_pic'],
+                              itemPic
                             ),
                             fit: BoxFit.cover)),
                   ),
@@ -46,13 +60,12 @@ class BucketItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextWidget(
-                          title: itemProvider.itemList[0]['item_name'],
+                          title: itemName,
                           fontSize: 18.sp,
                           color: Colors.black),
                       SpaceInHeight(height: 10.h),
                       TextWidget(
-                          title: itemProvider.itemList[0]
-                          ['special_price'],
+                          title:itemPrice,
                           fontSize: 14.sp,
                           color: CustomColor.fadedBlack),
                       SpaceInHeight(height: 10.h),
@@ -77,7 +90,10 @@ class BucketItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  CartCount(),
+                  CartCount(
+                    minimizeTap: minimizeTap,
+                    addTap: addTap,
+                  ),
                 ],
               )
             ],

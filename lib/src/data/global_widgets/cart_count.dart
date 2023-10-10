@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/src/controller/cart_controller.dart';
+import 'package:food_app/src/controller/item_provider.dart';
 import 'package:food_app/src/data/global_widgets/small_widget/text_widget.dart';
 import 'package:food_app/src/data/utils/custom_color.dart';
 import 'package:provider/provider.dart';
 
 class CartCount extends StatelessWidget {
-  CartCount({super.key});
+  dynamic minimizeTap, addTap;
+  CartCount({super.key, required this.minimizeTap, required this.addTap});
 
   @override
   Widget build(BuildContext context) {
-    var cartController = Provider.of<CartController>(context);
+    var cartController = Provider.of<ItemProvider>(context);
     return Container(
       width: 100.w,
       height: 30.h,
@@ -29,7 +31,7 @@ class CartCount extends StatelessWidget {
             child: InkWell(
                 onTap: () {
                   if(cartController.count >1){
-                    cartController.removeItem();
+                    minimizeTap;
                   }
                 },
                 child: const Icon(
@@ -48,7 +50,7 @@ class CartCount extends StatelessWidget {
                 color: CustomColor.cRed,
                 borderRadius: BorderRadius.circular(5.r)),
             child: InkWell(
-                onTap: () => cartController.addItem(),
+                onTap: () => addTap ,
                 child: const Icon(
                   Icons.add,
                   color: Colors.white,

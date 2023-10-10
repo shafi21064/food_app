@@ -36,8 +36,8 @@ class _DishItemListState extends State<DishItemList> {
                                   itemProvider.setIsFavorite(index);
                                 },
                                 favorite: itemProvider.itemList[index]['is_favorite'],
-                                dishName: itemProvider.itemLists[index]['item_name'],
-                                subTitle: itemProvider.itemLists[index]['item_name']
+                                dishName: itemProvider.itemList[index]['item_name'],
+                                subTitle: itemProvider.itemList[index]['item_name']
                             )));
                   },
                   favorite : itemProvider.itemList[index]['is_favorite'],

@@ -10,7 +10,20 @@ import 'package:food_app/src/data/global_widgets/cart_count.dart';
 import 'package:provider/provider.dart';
 
 class Product extends StatelessWidget {
-  const Product({super.key});
+  String itemPic, itemLeft, dishName, price;
+  dynamic onPress,minimizeTap, addTap;
+  bool addToCart;
+   Product({
+     super.key,
+     required this.onPress,
+     required this.addToCart,
+     required this.itemPic,
+     required this.dishName,
+     required this.itemLeft,
+     required this.price,
+     required this.minimizeTap,
+     required this.addTap
+   });
   @override
   Widget build(BuildContext context) {
     var itemProvider = Provider.of<ItemProvider>(context);
@@ -38,14 +51,14 @@ class Product extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(5.r),
                                 image: DecorationImage(
                                     image: AssetImage(
-                                      itemProvider.itemList[0]['item_pic'],
+                                     itemPic
                                     ),
                                     fit: BoxFit.cover)),
                           ),
                           Positioned(
                               bottom: 0,
                               child: ItemLeftButton(
-                                dishLeft: '5',
+                                dishLeft: itemLeft,
                               ))
                         ],
                       ),
@@ -57,15 +70,14 @@ class Product extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextWidget(
-                            title: itemProvider.itemList[0]['item_name'],
+                            title: dishName,
                             fontSize: 18.sp,
                             color: Colors.black),
                         SizedBox(
                           height: 10.h,
                         ),
                         TextWidget(
-                            title: itemProvider.itemList[0]
-                                ['special_price'],
+                            title: price,
                             fontSize: 14.sp,
                             color: CustomColor.fadedBlack),
                         SizedBox(
@@ -96,8 +108,15 @@ class Product extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CartCount(),
-                    ContainerButton(buttonName: 'Add To Cart')
+                    CartCount(
+                      minimizeTap: minimizeTap,
+                      addTap: addTap,
+                    ),
+                    ContainerButton(
+                      buttonName: addToCart? 'Added' : 'Add To Cart' ,
+                      onPress: onPress
+
+                    )
                   ],
                 )
               ],

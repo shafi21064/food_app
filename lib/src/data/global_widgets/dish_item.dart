@@ -45,8 +45,8 @@ class DishItem extends StatelessWidget {
         top: 10,
         right: 10,
         child: WishIcon(
-          onPress: onPress,
           favorite: favorite,
+          onPress: onPress,
         )
       ),
       Positioned(

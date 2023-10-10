@@ -14,9 +14,23 @@ class BucketItemList extends StatelessWidget {
       height: 190.h,
       width: MediaQuery.sizeOf(context).width,
       child: ListView.builder(
-        itemCount: itemProvider.itemList.length,
+        itemCount: itemProvider.cartList.length,
           itemBuilder: (context, index){
-          return const BucketItem();
+          return BucketItem(
+            onDelete: (){
+              itemProvider.removeFromCart(itemProvider.cartList[index]);
+            },
+              minimizeTap: (){
+              itemProvider.setAddToCart(index);
+              },
+              addTap: (){
+              itemProvider.setAddToCart(index);
+              },
+
+              itemName: itemProvider.cartList[index]['item_name'],
+              itemPic: itemProvider.cartList[index]['item_pic'],
+              itemPrice: itemProvider.cartList[index]['special_price']
+          );
           }
       ),
     );
